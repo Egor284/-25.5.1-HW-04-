@@ -5,7 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def test_allpets(driver): # Проверяем что присутствуют все питомцы.
-
    # Устанавливаем явное ожидание
    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//th[@scope='row']/img")))
    # Сохраняем в переменную pets питомцев отображенных на странице
@@ -22,7 +21,6 @@ def test_allpets(driver): # Проверяем что присутствуют �
    assert all_pets == len(pets)
 
 def test_photopets(driver): #проверяем наличие фото у питомцев
-
    # Устанавливаем явное ожидание
    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//th[@scope='row']/img")))
    # Сохраняем в переменную pets питомцев отображенных на странице
@@ -42,7 +40,6 @@ def test_photopets(driver): #проверяем наличие фото у пи�
    assert photos >= all_pets // 2
 
 def test_name(driver): #проверяем наличие имени,возраста,породы
-
    # Устанавливаем явное ожидание
    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//td[@class='smart_cell']/preceding-sibling::td")))
    # Сохраняем в переменную datapets данные о питомцах
@@ -52,7 +49,6 @@ def test_name(driver): #проверяем наличие имени,возра�
       assert datapets[i].text != ''
 
 def test_variousnames(driver): #проверяем имена питомцев
-
    # Устанавливаем явное ожидание
    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//td[@class='smart_cell']/preceding-sibling::td[3]")))
    # Сохраняем в переменную name информацию с именами питомцев
@@ -65,7 +61,6 @@ def test_variousnames(driver): #проверяем имена питомцев
    assert len(set(names)) == len(names)
 
 def test_duplicate_pets(driver): #проверяем что нет повторяющихся питомцев
-
    # Устанавливаем явное ожидание
    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//td[@class='smart_cell']/preceding-sibling::td[3]")))
    # Сохраняем в переменную name информацию с именами питомцев
